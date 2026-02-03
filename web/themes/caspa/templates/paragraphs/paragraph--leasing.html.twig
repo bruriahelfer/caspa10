@@ -1,0 +1,50 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+        <div class="motag"> 
+            <button aria-expanded="false" tabindex="1">{{ "Brand"|t }}</button>
+            <div class="open-content">
+                {{ drupal_view('terms', 'block_1') }}
+            </div>
+        </div>
+        <div class="model"> 
+            <button aria-expanded="false" tabindex="1">{{ "Model"|t }}</button>
+            <div class="open-content">
+                {{ drupal_view('sub_dgamim', 'block_1') }}
+                {{ drupal_view('sub_dgamim', 'block_2') }}
+            </div>
+        </div>
+        <div class="km disable"> 
+            <button aria-expanded="false">{{ "Required km" | t }}</button>
+            <div class="open-content">
+                <div service="15000" tabindex="1" role="button">{{ "Up to 15,000 km per year" | t }}</div>
+                <div service="20000" tabindex="1" role="button">{{ "Up to 20,000 km per year" | t }}</div>
+                <div service="25000" tabindex="1" role="button">{{ "Up to 25,000 km per year" | t }}</div>
+            </div>
+        </div>
+        <div class="service"> 
+            <input type="checkbox" id="service" name="service" checked="checked" tabindex="1">
+            <label for="service">
+                <div class="checked">
+                    <div class="big">{{ "Service Package"|t }}</div>
+                </div>
+                <div class="unchecked">
+                    <div class="big">{{ "Does not include Service Package"|t }}</div>
+                </div>
+            </label>
+        </div>
+        <div class="submit-wrapper">
+            <a href="" class="submit unactive">{{ "Give me an offer."|t }}</a>
+            <div class="submit-error"><span>{{ "All fields are required."|t}}<span></div>
+        </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

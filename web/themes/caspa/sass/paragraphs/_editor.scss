@@ -1,0 +1,36 @@
+.paragraph--type--editor{
+    .content-wrapper{
+        @include width;
+    }
+    .field--name-field-h2-title{
+        h2{
+            font-size: 1.5em!important;
+            color: $default!important;
+        }
+    }
+    &.grey{
+        .field--name-field-body{
+            color: #707070;
+        }
+    }
+    &.big-font{
+        font-size: 1.25em;
+        line-height: 1.4;
+    }
+    &.two-rows{
+        .field--name-field-body{
+            display: flex;
+            justify-content: space-between;
+            @include res(s-m){
+                display: block;
+            }
+            p{
+                width: 43%;
+                @include res(s-m){
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

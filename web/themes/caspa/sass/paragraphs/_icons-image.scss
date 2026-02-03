@@ -1,0 +1,62 @@
+.paragraph--type--icons-image{
+    > .content-wrapper{
+        @include width;
+        .content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .field--name-field-icons{
+                width: 500px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                @include res(xl){
+                    max-width: 400px;
+                }
+                @include res(s-m-l){
+                    width: 100%;
+                    margin: 0 auto;
+                }
+                > .field__item{
+                    width: 47%;
+                    max-width: 230px;
+                    text-align: center;
+                    margin-top: 38px;
+                    .field--name-field-icon{
+                        width: 96px;
+                        height: 96px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        border: 1px solid #17368439;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                        img{
+                            max-width: 55px;
+                            max-height: 55px;
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+                    .field--name-field-sub-title{
+                        margin: 0 auto;
+                        color: $default;
+                        font-size: 1.1em;
+                    }
+                    .field--name-field-h3-subtitle{
+                        h3{
+                            color: $dark-blue;
+                            font-size: 1.6em;
+                            margin: 0;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            .field--name-field-image{
+                width: calc(100% - 550px);
+            }
+        }
+    }
+}

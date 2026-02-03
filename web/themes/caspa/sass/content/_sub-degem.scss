@@ -1,0 +1,589 @@
+.sub-degem-wrapper{
+    padding-top: 160px;
+    .top-image{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        background: transparent linear-gradient(180deg, #E1EEFF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+        z-index: -1;
+        padding: 50px 0 50px 15%;
+        box-sizing: border-box;
+        @include res(s-m-l){
+            position: relative;
+            padding: 20px 0 0;
+            margin: 0;
+            justify-content: center;
+        }
+    }
+    h1, article{
+        @include width;
+    }
+    .top-area-details{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        > div{
+            background-color: $blue;
+            color: #fff;
+            border-radius: 22px;
+            margin-left: 20px;
+            padding: 8px 24px;
+            white-space: nowrap;
+            margin-bottom: 10px;
+            @include res(s-m){
+                margin-left: 7px;
+                padding: 3px 15px;
+                font-size: 0.9em;
+                @include res(s){
+                    padding: 3px 10px;
+                }
+            }
+        }
+    }
+    .content-area{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include res(s-m-l){
+            display: block;
+        }
+        .right{
+            width: 70%;
+            color: $blue;
+            @include res(s-m-l){
+                width: 100%;
+            }
+            .table{
+                box-shadow: 0px 1px 8px #00000029;
+                border-radius: 11px;
+                background-color: #fff;
+                padding: 6px;
+                font-size: 1.1em;
+                width: 800px;
+                margin-top: 28px;
+                box-sizing: border-box;
+                margin-bottom: 15px;
+                @include res(xl){
+                    width: 100%;
+                }
+                @include res(s-m-l){
+                    width: 100%;
+                    box-shadow: 1px 6px 8px #00000029;
+                    border-radius: 0;
+                    background-color: transparent;
+                }
+                @media (max-width: 580px){
+                    font-size: 0.85em;
+                }
+                > .field{
+                    display: flex;
+                    border-bottom: 1px solid #EEF6FF;
+                    padding: 11px 20px;
+                    &:first-child{
+                        background-color: #EEF6FF;
+                    }
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                }
+                &.prices-1{
+                    > .field{
+                        .label-row{
+                            font-weight: bold;
+                            width: 320px;
+                            @include res(xl){
+                                width: 260px;
+                            }
+                            @include res(s-m){
+                                width: 180px;
+                            }
+                        }
+                        .value, > .field{
+                            width: calc(100% - 340px);
+                            @include res(xl){
+                                width: calc(100% - 280px);
+                            }
+                            @include res(m){
+                                width: calc(100% - 180px);
+                            }
+                            @include res(s){
+                                width: calc(100% - 180px);
+                            }
+                        }
+                    }
+                }
+                &.prices-2{
+                    > .field{
+                        .label-row{
+                            width: 212px;
+                            padding-left: 10px;
+                            font-weight: bold;
+                            @include res(xl){
+                                width: 162px;
+                            }
+                            @include res(s-m){
+                                width: 102px;
+                            }
+                        }
+                        > .field{
+                            width: calc(100% - 222px);
+                            display: flex;
+                            @include res(xl){
+                                width: calc(100% - 172px);
+                            }
+                            @include res(s-m){
+                                width: calc(100% - 112px);
+
+                            }
+                            .field__item{
+                                width: 50%;
+                                padding-left: 10px;
+                                box-sizing: border-box;
+                            }
+                        }
+                        .value{
+                            width: calc(50% - 111px);
+                            padding-left: 10px;
+                            box-sizing: border-box;
+                            @include res(xl){
+                                width: calc(50% - 86px);
+                            }
+                            @include res(s-m){
+                                width: calc(50% - 56px);
+                            }
+                        }
+                    }
+                }
+                &.prices-3{
+                    > .field{
+                        .label-row{
+                            width: 212px;
+                            padding-left: 10px;
+                            font-weight: bold;
+                            @include res(xl){
+                                width: 162px;
+                            }
+                            @include res(s-m){
+                                width: 102px;
+                            }
+                        }
+                        > .field{
+                            width: calc(100% - 222px);
+                            display: flex;
+                            @include res(xl){
+                                width: calc(100% - 172px);
+                            }
+                            @include res(s-m){
+                                width: calc(100% - 112px);
+
+                            }
+                            .field__item{
+                                width: 33.333%;
+                                padding-left: 10px;
+                                box-sizing: border-box;
+                            }
+                        }
+                        .value{
+                            width: calc(33.33% - 74px);
+                            padding-left: 10px;
+                            box-sizing: border-box;
+                            @include res(xl){
+                                width: calc(33.33% - 54px);
+                            }
+                            @include res(s-m){
+                                width: calc(33.33% - 34px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .left{
+            width: 30%;
+            padding-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 1.2em;
+            max-width: 548px;
+            margin-right: auto;
+            @include res(s-m-l){
+                max-width: 100%;
+                width: 100%;
+                padding-bottom: 40px;
+                padding-top: 0px;
+            }
+            > .field{
+                width: 30%;
+                margin-left: 5%;
+                text-align: center;
+                margin-top: 40px;
+                &:nth-child(3n){
+                    margin-left: 0;
+                    @include res(s){
+                        margin-left: 4%;
+                    }
+                }
+                @include res(s){
+                    width: 48%;
+                    margin-left: 4%;
+                    &:nth-child(2n){
+                        margin-left: 0;
+                    }
+                }
+                .field__item{
+                    font-weight: bold;
+                    color: $blue;
+                    width: 100%;
+                }
+                .field__label{
+                    width: 100%;
+                    color: $default;
+                    font-weight: normal;
+                    font-size: 0.8em;
+                    &:before{
+                        content:"";
+                        width: 65px;
+                        height: 65px;
+                        border-radius: 50%;
+                        box-sizing: border-box;
+                        display: block;
+                        margin: 0 auto 5px;
+                    }
+                }
+                &.field--name-field-degem{
+                    .field__label{
+                        &:before{
+                            background: url("../images/model_icon.png") no-repeat center center #f9fafc;
+                            background-size: 58%;
+                        }
+                    }
+                }
+                &.field--name-field-engine{
+                    .field__label{
+                        &:before{
+                            background: url("../images/engine_icon.png") no-repeat center center #f9fafc;
+                            background-size: 49%;
+                        }
+                    }
+                }
+                &.field--name-field-batery{
+                    .field__label{
+                        &:before{
+                            background: url("../images/lighting.svg") no-repeat center center #f9fafc;
+                            background-size: 46%;
+                        }
+                    }
+                }
+                &.field--name-field-travel-range{
+                    .field__label{
+                        &:before{
+                            background: url("../images/location.png") no-repeat center center #f9fafc;
+                            background-size: 48%;
+                        }
+                    }
+                }
+                &.field--name-field-euro-ncap{
+                    .field__label{
+                        &:before{
+                            background: url("../images/badge.png") no-repeat center center #f9fafc;
+                            background-size: 49%;
+                        }
+                    }
+                }
+                &.field--name-field-safety{
+                    .field__label{
+                        &:before{
+                            background: url("../images/security.png") no-repeat center center #f9fafc;
+                            background-size: 46%;
+                        }
+                    }
+                }
+                &.field--name-field-engine-volume{
+                    .field__label{
+                        &:before{
+                            background: url("../images/gter_icon.png") no-repeat center center #f9fafc;
+                            background-size: 70%;
+                        }
+                    }
+                }
+                &.field--name-field-horsepower{
+                    .field__label{
+                        &:before{
+                            background: url("../images/horse_icon.png") no-repeat center center #f9fafc;
+                            background-size: 58%;
+                        }
+                    }
+                }
+
+                &.field--name-field-number-seats{
+                    .field__label{
+                        &:before{
+                            background: url("../images/seat_icon.png") no-repeat center center #f9fafc;
+                            background-size: 70%;
+                        }
+                    }
+                }
+                &.field--name-field-gearbox{
+                    .field__label{
+                        &:before{
+                            background: url("../images/gear_icon.png") no-repeat center center #f9fafc;
+                            background-size: 70%;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    .after-table{
+        color: $blue;
+        width: 70%;
+        @include res(s-m-l){
+            width: 100%;
+        }
+        .downloads{
+            display: flex;
+            max-width: 548px;
+            justify-content: space-between;
+            margin-top: 20px;
+            @include res(xl){
+                max-width: 400px;
+            }
+            @include res(s-m-l){
+                max-width: 100%;
+            }
+            @include res(s-m-l){
+                padding: 0;
+            }
+            @include res(s){
+                display: block;
+            }
+            > .field{
+                width: 48%;
+                position: relative;
+                &.field--name-field-technical{
+                    + .field--name-field-catalog:before, + .field--name-field-catalog-link:before{
+                        border-left: 2px dotted #9b9dc5;
+                        content: "";
+                        position: absolute;
+                        right: -20px;
+                        height: 16px;
+                        top: 2px;
+                        @include res(m){
+                            right: -10px;
+                        }
+                        @include res(s){
+                            display: none;
+                        }
+                    }
+                }
+            }
+            a{
+                background: url(/themes/caspa/images/pdf-file.svg) no-repeat right center;
+                padding: 4px 30px 4px 0;
+                color: $blue;
+            }
+        }
+    }
+    .field--name-field-gallery{
+        display: flex;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+        margin-top: 50px;
+        box-sizing: border-box;
+        text-align: center;
+        @include res(s-m){
+            padding: 0 30px;
+            overflow: visible;
+        }
+        > .field__item{
+            display: none;
+            &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4){
+                display: block;
+            }
+            &:nth-child(4){
+                @include res(s-m-l){
+                    display: none;
+                }
+            }
+            &:nth-child(3){
+                @include res(s-m){
+                    display: none;
+                }
+            }
+            &:nth-child(2){
+                @include res(s){
+                    display: none;
+                }
+            }
+        }
+    }
+    .field--name-field-mishpatit{
+        margin-top: 10px;
+    }
+}    
+    
+    
+.add-contact-info-small{
+    position: fixed;
+    left: 20px;
+    bottom: 142px;
+    z-index: 100;
+    border-radius: 50%;
+    font-size: 0.95em;
+    background: transparent linear-gradient(315deg, #FF6600 0%, #FF977D 100%) 0% 0% no-repeat padding-box;
+    box-shadow: none;
+    border: none;
+    width: 75px;
+    height: 75px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.1;
+    cursor: pointer;
+    @include res(s-m-l){
+        display: none;        
+    }
+}
+
+.float-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    display: none;
+    &.show{
+        display: flex;
+    }
+    .region-float-wrapper{
+        width: 600px;
+        max-width: 90%;
+        max-height: 90%;
+        background-color: #EEF6FF;
+        border-radius: 10px;
+        padding: 30px;
+        overflow: auto;
+        position: relative;
+        .close{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 30px;
+            top: 36px;
+            cursor: pointer;
+            &:before, &:after{
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                background-color: $blue;
+                top: 9px;
+                left: 0;
+            }
+            &:before{
+                transform: rotate(45deg);
+            }
+            &:after{
+                transform: rotate(-45deg);
+            }
+        }
+        #block-caspa-get-offer{
+            font-size: 0.85em;
+            form{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .js-form-type-processed-text{
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    h2{
+                        color: $blue;
+                    }
+                    p{
+                        font-size: 0.8em;
+                        margin: 0 0 30px;
+                    }
+                }
+                .js-form-type-textfield, .js-form-type-email{
+                    width: 48%;
+                    position: relative;
+                    margin-bottom: 17px;
+                    label{
+                        position: absolute;
+                        top: 11px;
+                        right: 12px;
+                        transition: all 0.5s;
+                        cursor: text;
+                    }
+                    input{
+                        background-color: #fff;
+                        border-bottom: 1px solid #D2D2D2;
+                        padding: 0 11px;
+                        box-sizing: border-box;
+                        outline: none;
+                        width: 100%;
+                        height: 40px;
+                        border: 1px solid #D2D2D2;
+                        border-radius: 6px;
+                        @include res(s-m){
+                            background: #F4F4F4;
+                            height: 35px;
+                            border: none;
+                        }
+                    }
+                    &.input-full{
+                        label{
+                            top: -14px;
+                            font-size: 0.8em;
+                            right: 0;
+                        }
+                    }
+                }
+                .js-form-type-checkbox{
+                    font-size: 0.9em;
+                    margin-bottom: 10px;
+                    &.form-item--error{
+                        color: red;
+                        .form-item--error-message{
+                            display: none;
+                        }
+                    }
+                    a{
+                        text-decoration: underline;
+                    }
+                }
+                input.form-submit{
+                    background: url(/themes/caspa/images/arrow-left-white.svg) no-repeat center left 15px $blue;
+                    padding: 9px 20px 12px 49px;
+                    color: #fff;
+                    font-size: 1em;
+                    height: 40px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.5s;
+                    margin-top: 20px;
+                    margin-right: auto;
+                    @include res(s-m){
+                        width: 100%;
+                        padding: 12px 20px;
+                        text-align: center;
+                        background-image: none;
+                        font-weight: normal;
+                    }
+                    &:hover{
+                        background-color: $dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}

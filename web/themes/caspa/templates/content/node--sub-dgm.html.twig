@@ -1,0 +1,135 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<div class="sub-degem-wrapper">
+  <h1 class="page-title">{{ label }}</h1>
+  <div class="top-image">
+    {{ content.field_main_image}}
+  </div>
+
+  <article{{ attributes.addClass(classes) }}>
+    <div{{ content_attributes }}>
+      <div class="top-area-details">
+        <div class="year">{{ "Year of"|t }} {{ node.field_year.value }}</div>
+        {% if view_mode starts with "basic" %}
+          <div class="service">{{ "Not including service package"|t }}</div>
+        {% endif %}
+        {% if view_mode starts with "include" %}
+          <div class="service">{{ "Including service package"|t }}</div>
+        {% endif %}
+        {% if view_mode ends with "15000" %}
+          <div class="km">{{ "Up to"|t }} 15,000 {{ "km"|t }}</div>
+        {% endif %}
+        {% if view_mode ends with "20000" %}
+          <div class="km">{{ "Up to"|t }} 20,000 {{ "km"|t }}</div>
+        {% endif %}
+        {% if view_mode ends with "25000" %}
+          <div class="km">{{ "Up to"|t }} 25,000 {{ "km"|t }}</div>
+        {% endif %}
+      </div>
+      <div class="content-area">
+        <div class="right">
+          <div class="table prices-{{ node.field_prices|length }}">
+            <div class="field">
+              <div class="label-row">{{ "Initial payment including VAT"|t }}</div>
+                {% for price in node.field_prices %}
+                <div class="value">₪{{ price.entity.field_first_payment.value|number_format }}</div>
+              {% endfor %}
+            </div>
+            <div class="field">
+              <div class="label-row">{{ "Car price list"|t }}</div>
+              {% for price in node.field_prices %}
+                <div class="value">{{ content.field_full_price }}</div>
+              {% endfor %}
+            </div>
+            {% if view_mode != "full" %}
+              <div class="field">
+                <div class="label-row">{{ "Monthly price including VAT"|t }}</div>
+                {{ content.field_prices }}
+              </div>
+            {% endif %}
+              <div class="field">
+                <div class="label-row">{{ "Insurance coverage*"|t }}</div>
+                {% for price in node.field_prices %}
+                  <div class="value"> {{ "Include"|t }}</div>
+                {% endfor %}
+              </div>
+            <div class="field">
+              <div class="label-row">{{ "Accessory package"|t }}</div>
+              {% for price in node.field_prices %}
+                <div class="value">{{ content.field_accessory }}</div>
+              {% endfor %}
+            </div>
+            {% if view_mode starts with "include" %}
+              <div class="field">
+                <div class="label-row">{{ "Treatments"|t }}</div>
+                {% for price in node.field_prices %}
+                  <div class="value"> {{ "Include"|t }}</div>
+                {% endfor %}
+              </div>
+              {% if content.field_service_include['#items'].value == "1" %}
+                <div class="field">
+                  <div class="label-row">{{ "Replacement of 4 tires and battery as a result of wear and tear"|t }}</div>
+                  {% for price in node.field_prices %}
+                    <div class="value"> {{ "Include"|t }}</div>
+                  {% endfor %}
+                </div>
+              {% endif %}         
+            {% endif %}
+            {% if content.field_no_selling_car['#items'].value == "1" %}
+              <div class="field">
+                <div class="label-row">{{ "Car sale"|t }}</div>
+                {% for price in node.field_prices %}
+                  <div class="value"> {{ "No need to sell the vehicle"|t }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}     
+            <div class="field">
+              <div class="label-row">{{ "Impairment"|t }}</div>
+              {% for price in node.field_prices %}
+                <div class="value"> {{ "Include"|t }}</div>
+              {% endfor %}
+            </div>
+            <div class="field">
+              <div class="label-row">{{ "Roadside and rescue services"|t }}</div>
+              {% for price in node.field_prices %}
+                <div class="value"> {{ "Include"|t }}</div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="left">
+          {{ content.field_degem}}
+          {{ drupal_entity('node', node.field_degem.entity.id, 'icons') }}
+        </div>
+      </div>
+      <div class="after-table">
+        {{ content.body }}
+        {{ content.field_text_include }}
+        <div class="downloads">
+          {{ drupal_entity('node', node.field_degem.entity.id, 'download') }}
+        </div>
+      </div>
+    </div>
+    {{ content.field_gallery }}
+    {{ content.field_mishpatit }}
+  </article>
+</div>
+<button class="add-contact-info-small" tabindex="1">{{ "Get an offer"|t }}</button>
+{% if has_contextual_permission %}
+  {% set view_mode_name = view_mode|replace({'_': '','include':'service'}) %}
+  {% if view_mode != 'full' %}
+    <div id="block-caspa-primary-local-tasks" class="contextual-region">
+      <ul>
+        <li><a href="/node/{{ node.id }}/edit?destination=/node/{{ node.id }}/{{ view_mode_name }}">{{ "Edit"|t }}</a></li>
+      </ul>
+    </div>
+  {% endif %}
+{% endif %}

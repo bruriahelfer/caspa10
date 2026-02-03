@@ -1,0 +1,76 @@
+  <header role="banner">
+    <div class="wrapper">
+      <div class="logo">
+        <a href="/" rel="home" class="site-logo">
+          <img src="/themes/caspa/images/logo-caspa.png" alt="Logo Caspa">
+        </a>
+      </div>
+      {{ page.menu }}
+    </div>
+      <div id="menu-toggle" class="only-mobile">
+        <div id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="close-sub-menu">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+  </header>
+
+<main role="main">
+  {{ page.message }}
+  <a id="main-content" tabindex="-1"></a>
+
+  {% if page.sidebar_first %}
+    <aside class="layout-sidebar-first" role="complementary">
+      {{ page.sidebar_first }}
+    </aside>
+  {% endif %}
+  
+  <div class="layout-content">
+      {% if not node and not view_id == 'displays_sub_degem' %}
+        {{ page.title }}
+      {% endif %}
+      {{ page.content_top }}
+      {{ page.content }}
+      {{ page.content_bottom }}
+  </div>{# /.layout-content #}
+
+  {% if page.sidebar_second %}
+    <aside class="layout-sidebar-second" role="complementary">
+      {{ page.sidebar_second }}
+    </aside>
+  {% endif %}
+
+</main>
+</div>
+<div class="whatsapp-wrapper"><a href="https://api.whatsapp.com/send/?phone=972549378888&text&type=phone_number&app_absent=0"><img src="/themes/caspa/images/whatsapp.svg" alt="WhatsApp"></a></div>
+<div class="contact-float">
+  {{ drupal_entity('webform', 'contact') }}
+</div>
+<footer role="contentinfo">
+  <div class="width-wrapper">
+    <div class="right">
+      <div class="logo"><a href="/" rel="home">
+        <img src="/themes/caspa/images/logo-caspa-footer.jpg" alt="Logo Caspa">
+      </a></div>
+    </div>
+    <div class="center">{{ page.footer }}</div>
+    <div class="left">
+      <div class="machshirey-log"><img src="/themes/caspa/images/tnua.png" alt="{{ "Machshirey Tnua"|t}}"></div>
+    </div>
+    <div class="credit">{{ "Powered by" }}<a href="https://comrax.com"><img src="/themes/caspa/images/comrax.png" alt="Comrax"></a></div>
+  </div>{# /.width-wrapper #}
+</footer>
+</div>{# /.layout-container #}
+{% if page.float %}
+  <div class="float-wrapper">
+    <div class="region-float-wrapper">
+      <div class="close"></div>
+      {{ page.float }}
+    </div>
+  </div>
+{% endif %}
