@@ -98,6 +98,12 @@
               {% endfor %}
             </div>
             <div class="field">
+              <div class="label-row">{{ "Deal period"|t }}</div>
+              {% for price in node.field_prices %}
+                <div class="value"> {{ "36 Months"|t }}</div>
+              {% endfor %}
+            </div>                    
+            <div class="field">
               <div class="label-row">{{ "Roadside and rescue services"|t }}</div>
               {% for price in node.field_prices %}
                 <div class="value"> {{ "Include"|t }}</div>
